@@ -2,7 +2,6 @@ import mongoose, { Schema, Document } from "mongoose";
 import { encrypt, decrypt, hash } from "../utils/crypto";
 
 export interface IUser extends Document {
-
     name: string;
     email: string;
     password: string;

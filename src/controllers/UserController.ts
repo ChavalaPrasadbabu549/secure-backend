@@ -4,7 +4,7 @@ import crypto from "crypto";
 import { setOtp, verifyOtp } from "../middleware/otpStore";
 import { Sendotpmail } from "../middleware/services";
 import generateToken from "../utils/generateToken";
-import { encrypt, hash } from "../utils/crypto";
+import { hash } from "../utils/crypto";
 
 
 export const register = async (req: Request, res: Response) => {
@@ -86,7 +86,7 @@ export const login = async (req: Request, res: Response) => {
             return res.status(400).json({
                 code: 400,
                 success: false,
-                message: "Email and password are required"
+                message: "Email is required"
             });
         }
         const emailHash = hash(email);
